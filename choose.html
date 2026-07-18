@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#6366f1">
+    <title>Document</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    margin:0;
+    background:#6366f1;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:20px 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.container{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    padding:20px;
+    border-radius:25px;
+    height:auto;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    border-radius:25px;
+    padding:20px;
+}
+
+.wide{
+    display:flex;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    width:32px;
+    height:32px;
+    cursor:pointer;
+}
+
+.wide p{
+    flex:1;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    margin-right:32px;
+}
+
+.part{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:25px;
+}
+
+.part p{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    background:#f5f5ff;
+    border-radius:12px;
+    margin:0 5px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.part p:first-child{
+    background:#6366f1;
+    color:#fff;
+}
+
+.part span{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.row{
+    width:100%;
+    height:240px;
+    border-radius:20px;
+    margin-bottom:25px;
+    background:linear-gradient(135deg,#6c5ce7,#6558e6);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.qwe{
+    width:100%;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:17px;
+    margin-bottom:25px;
+    outline:none;
+}
+
+.qwe:focus{
+    border-color:#6366f1;
+}
+
+.al{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.al span{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    border:3px solid #fff;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.al span:hover{
+    transform:scale(1.15);
+}
+
+.pot button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#6366f1;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.pot button:hover{
+    background:#5457e5;
+}
+@media(max-width:430px){
+
+body{
+    background:#fff;
+}
+
+
+.wide p{
+    font-size:22px;
+}
+
+.part{
+    gap:8px;
+}
+
+.part p{
+    font-size:14px;
+    padding:10px;
+}
+
+.row{
+    height:200px;
+}
+
+.al span{
+    width:40px;
+    height:40px;
+}
+
+.qwe{
+    font-size:16px;
+}
+
+.pot button{
+    font-size:17px;
+}
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <div class="wide">
+<img src="arrow.png" class="logo" onclick="back()">
+        <p>Choose Color</p>
+    </div>
+    <div class="part">
+          <p>Solid Color</p>
+    <p>Gradient</p>
+    <p>Random</p>
+    </div>
+    <div class="row"></div>
+
+    <input type="text" class="qwe" placeholder="#6C5CE7">
+
+                <div class="al">
+                                 <span style="background-color: #6366f1;" onclick="race()"></span>
+                                <span style="background-color: #3b82f6;" onclick="main()"></span>
+                                <span style="background-color: green" onclick="green()"> </span>
+                                <span style="background-color: red;" onclick="red() "></span>
+                                <span style="background-color: bisque;" onclick="bisque()"></span>
+                                <span style="background-color: gold;" onclick="gold()"></span>
+                                <span style="background-color: orange;" onclick="orange()"></span>
+            </div>
+            <div class="pot">
+                <button onclick="apply()">Apply Color</button>
+            </div>
+                    
+    </div>
+</body>
+<script>
+    let color="";
+    let range=document.querySelector(".row");
+    function back(){
+        window.location.href="index.html";
+    }
+    function race(){
+        color="#6366f1";
+      range.style.background=color;
+    }
+    function main(){
+        color="#3b82f6";
+        range.style.background=color;
+    }
+    function green(){
+        color="green";
+        range.style.background=color;
+    }
+        function red(){
+        color="red";
+        range.style.background=color;
+    }
+        function bisque(){
+        color="bisque";
+        range.style.background=color;
+    }
+        function gold(){
+        color="gold";
+        range.style.background=color;
+    }
+        function orange(){
+        color="orange";
+        range.style.background=color;
+    }
+function apply(){
+    localStorage.setItem("bg", color);
+    window.location.href="index.html";
+}
+</script>
+</html>
